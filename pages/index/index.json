@@ -1,0 +1,5 @@
+{
+	"usingComponents": {
+		"MTTable": "../../components/MTTable/MTTable"
+	}
+}

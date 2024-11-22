@@ -1,0 +1,7 @@
+<MTTable style="width:100%;" left="{{true}}" tableData="{{tableData}}" config="{{testTableConfig}}" border maxHeight="800">
+	<block wx:for="{{tableData}}" wx:for-index="index" wx:for-item="tableItem" wx:key="{{index}}">
+		<view wx:for="{{testTableConfig}}" wx:for-index="configIndex" slot="tr-{{index}}td-{{configIndex+1}}">
+			{{tableItem[testTableConfig[configIndex]['prop']]}}
+		</view>
+	</block>
+</MTTable>

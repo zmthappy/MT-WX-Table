@@ -1,0 +1,127 @@
+.mt-table {
+	width: 100%;
+}
+
+.mt-table_scroll {
+	width: 100%;
+	/* overflow-y: hidden; */
+	/* position: relative; */
+}
+
+.mt-header {
+	display: flex;
+	flex-direction: row;
+	font-weight: bold;
+}
+
+/* 设置表头字体样式 */
+.mt-heander-font {
+	font-size: 24rpx;
+	font-weight: bold;
+	color: purple;
+}
+
+.mt-header .mt-header-column {
+	padding: 6rpx 10rpx;
+	min-height: 80rpx;
+	min-width: 80rpx;
+	flex-shrink: 0;
+	word-break: break-all;
+	word-wrap: break-word;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	box-sizing: border-box;
+}
+
+.mt-header .mt-header-column-border {
+	border-right: solid 2rpx #dfdfdf;
+	border-bottom: solid 2rpx #dfdfdf;
+}
+
+.mt-header .mt-header-column-border:last-child {
+	border-right: solid 0rpx #dfdfdf;
+}
+
+.content-row {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: stretch;
+	position: relative;
+}
+
+.content-row-bg1 {
+	background-color: #fff;
+}
+
+.content-row-bg2 {
+	background-color: #f7f8fa;
+}
+
+.content-column {
+	padding: 6rpx 10rpx;
+	flex-shrink: 0;
+	min-height: 80rpx;
+	word-break: break-all;
+	word-wrap: break-word;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.content-column-border {
+	border-top: solid 2rpx #dfdfdf;
+	border-right: solid 2rpx #dfdfdf;
+}
+
+.content-column-border:last-child {
+	border-right: solid 0rpx #dfdfdf;
+}
+
+.border {
+	border: solid 2rpx #dfdfdf;
+}
+
+.opText {
+	flex-shrink: 0;
+	word-break: break-all;
+	word-wrap: break-word;
+	display: flex;
+	flex-direction: column;
+	min-width: 150rpx;
+	min-height: 80rpx;
+	justify-content: center;
+	color: #5C4EFF;
+	overflow: hidden;
+}
+
+.mt-table-row-tr {
+	width: 100%;
+	display: flex;
+	align-items: stretch;
+}
+
+/* 包裹元素的单元格样式 */
+.mt-table-td-cell {
+	min-height: 80rpx;
+	min-width: 80rpx;
+	flex-shrink: 0;
+	word-break: break-all;
+	word-wrap: break-word;
+	box-sizing: border-box;
+	background-color: #ffffff;
+}
+
+
+
+/* 包裹元素单元格padding */
+.mt-table-td-cell-padding {
+	padding: 6rpx 10rpx;
+}
+
+.mt-table-td-cell-border {
+	border-right: solid 2rpx #dfdfdf;
+	border-bottom: solid 2rpx #dfdfdf;
+}
