@@ -1,14 +1,14 @@
-<view class="mt-table {{border?'border':''}}">
-	<scroll-view class="mt-table_scroll" bindscroll="tableScroll" scroll-y="{{maxHeight!='0'}}" scroll-x style="{{maxHeight != '0' ? 'height: ' + maxHeight + 'rpx;' : ''}}">
+<view class="mt-table {{border?'mt-table-border':''}}">
+	<scroll-view class="mt-table_scroll" bindscroll="tableScroll" scroll-y="{{maxHeight!='0'}}" scroll-x style="{{maxHeight != '0' ? 'max-height: ' + maxHeight + 'rpx;' : ''}}">
 		<!--表头 -->
-		<view wx:if="{{config.length}}" style="position:sticky;top:0;z-index:999;" class="mt-header">
-			<view wx:for="{{config}}" wx:key="{{index}}" style="{{index==0&&left?'position:sticky;left:0;':''}} background-color:{{headbgColor}};text-align:{{align}};width:{{item.width}};flex-grow:{{item.width ? 'none' : '1'}}" class="mt-header-column mt-heander-font mt-heander-font-outer {{border?'mt-header-column-border':''}}">
+		<view wx:if="{{config.length}}" class="mt-header">
+			<view wx:for="{{config}}" wx:key="index" style="{{index==0&&left?'position:sticky;left:0;':''}} background-color:{{headbgColor}};text-align:{{align}};width:{{item.width}};flex-grow:{{item.width ? 'none' : '1'}}" class="mt-header-column mt-heander-font mt-heander-font-outer {{border?'mt-header-column-border':''}}">
 				{{item.label}}
 			</view>
 		</view>
 		<!-- 表体 -->
-		<view wx:for="{{tableData}}" class="mt-table-row-tr" wx:for-index="index" wx:for-item="tableItem" wx:key="{{index}}" data-item="{{tableItem}}" bind:tap="rowClick">
-			<view style="{{configIndex==0&&left?'position:sticky;left:0;':''}}width:{{config[configIndex]['width']}};flex-grow:{{config[configIndex]['width']? 'none' : '1'}}" wx:for="{{config}}" wx:for-index="configIndex" class="mt-table-td-cell {{border?'mt-table-td-cell-border':''}} {{hasPadding ? 'mt-table-td-cell-padding':''}}" wx:for-item="configItem">
+		<view wx:for="{{tableData}}" class="mt-table-tr" wx:for-index="index" wx:for-item="tableItem" wx:key="index" data-item="{{tableItem}}" bind:tap="rowClick">
+			<view  wx:for="{{config}}" wx:for-index="configIndex"  wx:key="configIndex" class="mt-table-td-cell {{showOverflowTooltip ? 'mt-table-td-cell-text-ellipsis':''}}  {{border?'mt-table-td-cell-border':''}} {{hasPadding ? 'mt-table-td-cell-padding':''}}" wx:for-item="configItem" style="{{configIndex==0&&left?'position:sticky;left:0;':''}}width:{{config[configIndex]['width']}};flex-grow:{{config[configIndex]['width']? 'none' : '1'}}">
 				<slot name="tr-{{index}}td-{{configIndex+1}}"></slot>
 			</view>
 		</view>

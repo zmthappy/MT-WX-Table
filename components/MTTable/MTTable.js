@@ -6,52 +6,69 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    //对齐方式 left center right
+    /**
+     * 对齐方式 left center right
+     * */
     align: {
       type: String,
       value: 'left'
     },
-    //指定表格高度
+    /**
+     * 指定表格高度
+     */
     maxHeight:{
       type: String,
       value: '0'
     },
-    //是否固定左边标题
+    /**
+     * 是否固定左边标题
+     */
     left:{
       type: Boolean,
       value: false
     },
-    //斑马纹
+    /**
+     * 斑马纹
+     */
     stripe: {
       type: Boolean,
       value: true
     },
-    //是否边框
+    /**
+     * 是否边框
+     */
     border: {
       type: Boolean,
       value: false
     },
-    //标题背景
+    /**
+     * 表头背景色
+     */
     headbgColor: {
       type: String,
       value: '#f7f8fa'
     },
-    //操作文本 不传不显示
-    // opText: {
-    //   type: String,
-    //   value: ''
-		// },
-		// 是否存在内边距
+		/**
+     * 是否存在内边距--该属性用于单元格内嵌套数组时(只针对表体)
+     */
 		hasPadding:{
 			type: Boolean,
 			value: true,
+    },
+    /**
+     * 操作文本 不传不显示
+     */
+    opText: {
+      type: String,
+      value: ''
 		},
    /**
+    * 表头与表体的单元格宽度
      config: [
 			 {
 				 prop:"key",//表格字段
 				 width:"279rpx",//单元格宽度
-				 label:"",
+				 label:"xx",//表头
 			 }
 		 ]
     */
@@ -65,7 +82,14 @@ Component({
 		tableData:{
 			type:Array,
 			value:[],
-		}
+    },
+    /**
+     * 文字省略
+     */
+    showOverflowTooltip:{
+      type:Boolean,
+			value:false,
+    }
   },
 
 	/**
@@ -91,26 +115,41 @@ Component({
     rowClick(event) {
       //当前行数据
 			const {row} = event.currentTarget.dataset;
-			console.log("cccccccccccccc");
       this.triggerEvent('rowClick', row);
 		},
 		tableScroll(event){
 			const { scrollLeft, scrollTop, scrollHeight, scrollWidth, deltaX, deltaY} = event.detail;
-			console.log(event.detail,"scrollLeft");
+			// console.log(event.detail,"scrollLeft");
 		}
   },
+  /**
+   * 监听器
+   */
   observers: {
-    'y': function (y) {
-      if (y) {
-        // this.setData({y:y})
-      }
-    }
   },
-
+  /**
+   * 生命周期
+   */
+  lifetimes:{
+    attached: function() {
+      console.log("在组件实例进入页面节点树时执行");
+    },
+    detached: function() {
+      console.log("在组件实例被从页面节点树移除时执行");
+    },
+  },
   /**
    * 声明周期函数
    */
   pageLifetimes: {
-
+    show: function() {
+      // 页面被展示
+    },
+    hide: function() {
+      // 页面被隐藏
+    },
+    resize: function(size) {
+      // 页面尺寸变化
+    }
   }
 })
