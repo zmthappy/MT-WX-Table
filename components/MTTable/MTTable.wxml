@@ -3,13 +3,13 @@
 	<view class="mt-table-component-view" style="width: {{totalWidth}}rpx;">
 		<!--表头 -->
 		<view wx:if="{{config.length}}" class="mt-header">
-			<view wx:for="{{config}}" wx:key="index" style="{{index==0&&left?'position:sticky;left:0;':''}} background-color:{{headbgColor}};text-align:{{align}};width:{{item.width}};flex-grow:{{item.width ? 'none' : '1'}}" class="mt-header-column mt-heander-font mt-heander-font-outer {{border?'mt-header-column-border':''}}">
+			<view wx:for="{{config}}" wx:key="index" style="{{index==0&&left?'position:sticky;left:0;':''}} background-color:{{headbgColor}};text-align:{{align}};width:{{item.width}};flex-grow:{{item.width ? 'none' : '1'}}" class="mt-header-column mt-header-font mt-header-font-outer {{border?'mt-header-column-border':''}}">
 				{{item.label}}
 			</view>
 		</view>
 		<!-- 表体 -->
-		<view wx:for="{{tableData}}" class="mt-table-tr" wx:for-index="index" wx:for-item="tableItem" wx:key="index" data-item="{{tableItem}}" bind:tap="_rowClick">
-			<view wx:for="{{config}}" wx:for-index="configIndex" wx:key="configIndex" class="mt-table-td-cell {{showOverflowTooltip ? 'mt-table-td-cell-text-ellipsis':''}}  {{border?'mt-table-td-cell-border':''}} {{hasPadding ? 'mt-table-td-cell-padding':''}}" wx:for-item="configItem" style="{{configIndex==0&&left?'position:sticky;left:0;':''}}width:{{config[configIndex]['width']}};flex-grow:{{config[configIndex]['width']? 'none' : '1'}}">
+		<view wx:for="{{tableData}}" class="mt-table-tr mt-table-tr-stripe-outer {{stripe ? 'mt-table-tr-stripe' : ''}}" wx:for-index="index" wx:for-item="tableItem" wx:key="index" data-item="{{tableItem}}" bind:tap="_rowClick">
+			<view wx:for="{{config}}" wx:for-index="configIndex" wx:key="configIndex" class="mt-table-td-cell {{showOverflowTooltip ? 'mt-table-td-cell-text-ellipsis':''}}  {{border?'mt-table-td-cell-border':''}} {{hasPadding ? 'mt-table-td-cell-padding':''}} " wx:for-item="configItem" style="{{configIndex==0&&left?'position:sticky;left:0;':''}}width:{{config[configIndex]['width']}};flex-grow:{{config[configIndex]['width']? 'none' : '1'}}">
 				<slot name="tr-{{index}}td-{{configIndex+1}}"></slot>
 			</view>
 		</view>

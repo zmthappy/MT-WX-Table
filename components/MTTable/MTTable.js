@@ -104,7 +104,7 @@ Component({
 	/**
 	 * 外部样式修改
 	 */
-	externalClasses: ['mt-heander-font-outer'],
+	externalClasses: ['mt-header-font-outer','mt-table-tr-stripe-outer'],
 
   /**
    * 组件的初始数据

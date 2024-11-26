@@ -21,7 +21,7 @@
 }
 
 /* 设置表头字体样式 */
-.mt-heander-font {
+.mt-header-font {
 	font-size: 24rpx;
 	font-weight: bold;
 	color: purple;
@@ -75,6 +75,11 @@
 	display: flex;
 	flex-wrap: nowrap;
 	/* align-items: center; */
+	background-color: #ffffff;
+}
+
+.mt-table-tr-stripe:nth-child(2n+1) {
+	background-color: pink;
 }
 
 /* 包裹元素的单元格样式 */
@@ -86,7 +91,6 @@
 	word-break: break-all;
 	word-wrap: break-word;
 	box-sizing: border-box;
-	background-color: #ffffff;
 }
 
 /* 设置单元格文字过长省略 */

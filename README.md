@@ -14,4 +14,5 @@
 				 label:"xx",//表头
 			 }
 		 ]
-	8：tableData:表格数据(类型为Array);默认[]
+	8.tableData:表格数据(类型为Array);默认[]
+	9.stripe:开启斑马纹;默认true(Boolean)
