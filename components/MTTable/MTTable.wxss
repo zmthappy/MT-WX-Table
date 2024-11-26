@@ -1,19 +1,23 @@
-.mt-table {
+.mt-table_scroll {
 	width: 100%;
+	height: 100%;
 }
 
-.mt-table_scroll {
-  width: 100%;
-  overflow: hidden;
+.mt-table-component-view {
+	min-width: 100%;
+	min-height: 100%;
+	position: relative;
+	background-color: #fff;
 }
 
 .mt-header {
 	display: flex;
 	flex-direction: row;
-  font-weight: bold;
-  position:sticky;
-  top:0;
-  z-index:999;
+	font-weight: bold;
+	flex-wrap: nowrap;
+	position: sticky;
+	top: 0;
+	z-index: 999;
 }
 
 /* 设置表头字体样式 */
@@ -69,12 +73,13 @@
 .mt-table-tr {
 	width: 100%;
 	display: flex;
+	flex-wrap: nowrap;
 	/* align-items: center; */
 }
 
 /* 包裹元素的单元格样式 */
 .mt-table-td-cell {
-  /* 设置单元格的最小高度 */
+	/* 设置单元格的最小高度 */
 	min-height: 40rpx;
 	min-width: 80rpx;
 	flex-shrink: 0;
@@ -85,11 +90,14 @@
 }
 
 /* 设置单元格文字过长省略 */
-.mt-table-td-cell-text-ellipsis view{
-  width: 100%;
-  overflow: hidden; /* 确保超出容器的文本被裁剪 */
-  white-space: nowrap; /* 确保文本在一行内显示 */
-  text-overflow: ellipsis; /* 使用省略号表示文字被裁剪 */
+.mt-table-td-cell-text-ellipsis view {
+	width: 100%;
+	overflow: hidden;
+	/* 确保超出容器的文本被裁剪 */
+	white-space: nowrap;
+	/* 确保文本在一行内显示 */
+	text-overflow: ellipsis;
+	/* 使用省略号表示文字被裁剪 */
 }
 
 /* 包裹元素单元格padding */

@@ -74,7 +74,16 @@ Component({
     */
     config: {
       type: Array,
-      value: []
+			value: [],
+			observer:function(newVal,oldVak){
+				let totalWidth = 0;
+				for (const item of newVal) {
+					totalWidth += item.width ? Number(item.width.slice(0,item.width.indexOf("r"))):0;
+				}
+				this.setData({
+					totalWidth:totalWidth,
+				})
+			}
 		},
 		/**
 		 * 表体数据
@@ -101,9 +110,9 @@ Component({
    * 组件的初始数据
    */
   data: {
-
-  },
-
+		// 当前单元格汇总的宽度
+		totalWidth:0,
+	},
   /**
    * 组件的方法列表
    */
@@ -112,14 +121,14 @@ Component({
      * 获取当前行数据
      * @param {event} event 
      */
-    rowClick(event) {
+    _rowClick(event) {
       //当前行数据
 			const {row} = event.currentTarget.dataset;
       this.triggerEvent('rowClick', row);
 		},
-		tableScroll(event){
+		_tableScroll(event){
 			const { scrollLeft, scrollTop, scrollHeight, scrollWidth, deltaX, deltaY} = event.detail;
-			// console.log(event.detail,"scrollLeft");
+			console.log(event.detail,"scrollLeft");
 		}
   },
   /**
@@ -132,18 +141,20 @@ Component({
    */
   lifetimes:{
     attached: function() {
-      console.log("在组件实例进入页面节点树时执行");
+			console.log("在组件实例进入页面节点树时执行");
     },
     detached: function() {
       console.log("在组件实例被从页面节点树移除时执行");
-    },
+		},
+		ready:function(){
+		}
   },
   /**
    * 声明周期函数
    */
   pageLifetimes: {
     show: function() {
-      // 页面被展示
+
     },
     hide: function() {
       // 页面被隐藏

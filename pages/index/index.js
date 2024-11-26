@@ -48,11 +48,11 @@ Page({
 				width:"150rpx",
 				label:"five"
 			},
-			// {
-			// 	prop:"Name",
-			// 	width:"120rpx",
-			// 	label:"担保人"
-			// },
+			{
+				prop:"Message",
+				width:"250rpx",
+				label:"five"
+			}
 		],
 		tableData:[
 			{
@@ -68,6 +68,73 @@ Page({
 				Message:"111111111111111111111111"
 			},
 			{
+				Name:"cccccccccccc",
+				Message:"111111111111111111111111"
+			},
+			{
+				Name:"cccccccccccccc",
+				Message:"111111111111111111111111"
+			},
+			{
+				Name:"cccccccccccc",
+				Message:"111111111111111111111111"
+			},
+			{
+				Name:"cccccccccccccc",
+				Message:"111111111111111111111111"
+			},
+			{
+				Name:"cccccccccccc",
+				Message:"111111111111111111111111"
+			},
+			{
+				Name:"cccccccccccccc",
+				Message:"111111111111111111111111"
+			},
+
+			{
+				Name:"cccccccccccc",
+				Message:"111111111111111111111111"
+			},
+			{
+				Name:"cccccccccccccc",
+				Message:"111111111111111111111111"
+			},			{
+				Name:"cccccccccccc",
+				Message:"111111111111111111111111"
+			},
+			{
+				Name:"cccccccccccccc",
+				Message:"111111111111111111111111"
+			},			{
+				Name:"cccccccccccc",
+				Message:"111111111111111111111111"
+			},
+			{
+				Name:"cccccccccccccc",
+				Message:"111111111111111111111111"
+			},			{
+				Name:"cccccccccccc",
+				Message:"111111111111111111111111"
+			},
+			{
+				Name:"cccccccccccccc",
+				Message:"111111111111111111111111"
+			},			{
+				Name:"cccccccccccc",
+				Message:"111111111111111111111111"
+			},
+			{
+				Name:"cccccccccccccc",
+				Message:"111111111111111111111111"
+			},			{
+				Name:"cccccccccccc",
+				Message:"111111111111111111111111"
+			},
+			{
+				Name:"cccccccccccccc",
+				Message:"111111111111111111111111"
+			},			{
 				Name:"cccccccccccc",
 				Message:"111111111111111111111111"
 			},
