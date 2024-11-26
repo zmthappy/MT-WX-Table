@@ -1,5 +1,6 @@
 {
 	"usingComponents": {
 		"MTTable": "../../components/MTTable/MTTable"
-	}
+	},
+	"navigationBarTitleText": "MT-WX-TABLE"
 }
