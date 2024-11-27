@@ -7,52 +7,54 @@ Page({
 			{
 				prop:"Message",
 				width:"150rpx",
-				label:"first"
+				label:"first",
+				needPadding:true,
 			},
 			{
 				prop:"Name",
 				width:"150rpx",
-				label:"second"
+				label:"second",
+				needPadding:true,
 			},
 			{
 				prop:"Message",
 				width:"150rpx",
-				label:"three"
+				label:"three",
+				needPadding:true,
 			},
 			{
 				prop:"Name",
 				width:"150rpx",
-				label:"fourfourf"
+				label:"fourfourf",
+				needPadding:true,
 			},
 			{
 				prop:"Message",
 				width:"150rpx",
-				label:"five"
+				label:"five",
+				needPadding:true,
 			},
 			{
 				prop:"Message",
 				width:"150rpx",
-				label:"five"
+				label:"five",
+				needPadding:false,
 			},
-			// {
-			// 	prop:"Message",
-			// 	width:"150rpx",
-			// 	label:"five"
-			// },
-			// {
-			// 	prop:"Message",
-			// 	width:"250rpx",
-			// 	label:"five"
-			// }
 		],
 		tableData:[
 			{
 				Name:"ccccccccccccccccccccccc",
 				Message:"111111111111111111111111",
-				testArray:[{
+				testArray:[
+					{
 					name:"11",
 					label:"cc",
-				}]
+					},
+					{
+						name:"11",
+						label:"cc",
+					},
+				]
 			},
 			{
 				Name:"cccccccccccc",
@@ -101,65 +103,6 @@ Page({
 					name:"11",
 					label:"cc",
 				}]
-			},
-			{
-				Name:"cccccccccccc",
-				Message:"111111111111111111111111"
-			},
-			{
-				Name:"cccccccccccccc",
-				Message:"111111111111111111111111"
-			},
-
-			{
-				Name:"cccccccccccccc",
-				Message:"111111111111111111111111"
-			},
-			{
-				Name:"cccccccccccccc",
-				Message:"111111111111111111111111"
-			},			{
-				Name:"cccccccccccccc",
-				Message:"111111111111111111111111"
-			},
-			{
-				Name:"cccccccccccccc",
-				Message:"111111111111111111111111"
-			},			{
-				Name:"cccccccccccccc",
-				Message:"111111111111111111111111"
-			},
-			{
-				Name:"cccccccccccccc",
-				Message:"111111111111111111111111"
-			},			{
-				Name:"cccccccccccccc",
-				Message:"111111111111111111111111"
-			},
-			{
-				Name:"cccccccccccccc",
-				Message:"111111111111111111111111"
-			},			{
-				Name:"cccccccccccc",
-				Message:"111111111111111111111111"
-			},
-			{
-				Name:"cccccccccccccc",
-				Message:"111111111111111111111111"
-			},			{
-				Name:"cccccccccccccc",
-				Message:"111111111111111111111111"
-			},
-			{
-				Name:"cccccccccccccc",
-				Message:"111111111111111111111111"
-			},			{
-				Name:"cccccccccccc",
-				Message:"111111111111111111111111"
-			},
-			{
-				Name:"cccccccccccccc",
-				Message:"111111111111111111111111"
 			},
 		]
   },

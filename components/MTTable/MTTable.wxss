@@ -1,4 +1,4 @@
-.mt-table_scroll {
+.mt-table-scroll {
 	min-width: 100%;
 	min-height: 100%;
 }
@@ -30,9 +30,6 @@
 .mt-header .mt-header-column {
 	padding: 6rpx 10rpx;
 	min-height: 40rpx;
-	/* min-width: 80rpx; */
-	/* flex-basis: 80rpx;
-	flex-shrink: 0; */
 	flex: 0 0 80rpx;
 	word-break: break-all;
 	word-wrap: break-word;
@@ -57,7 +54,6 @@
 }
 
 
-
 /* 表体的每行的样式表 */
 .mt-table-tr {
 	width: 100%;
@@ -69,9 +65,6 @@
 .mt-table-td-cell {
 	/* 设置单元格的最小高度 */
 	min-height: 40rpx;
-	/* min-width: 80rpx; */
-	/* flex-basis: 80rpx;
-	flex-shrink: 0; */
 	flex: 0 0 80rpx;
 	word-break: break-all;
 	word-wrap: break-word;

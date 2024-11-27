@@ -49,30 +49,15 @@ Component({
       type: String,
       value: '#f7f8fa'
     },
-		/**
-     * 是否存在内边距--该属性用于单元格内嵌套数组时(只针对表体)
-     */
-		hasPadding:{
-			type: Boolean,
-			value: true,
-    },
     /**
      * 操作文本 不传不显示
      */
     opText: {
       type: String,
-      value: ''
+      value: '暂无数据'
 		},
    /**
-    * 表头与表体的单元格宽度
-     config: [
-			 {
-				 prop:"key",//表格字段
-				 width:"279rpx",//单元格宽度
-				 label:"xx",//表头
-				 fixed:"",//是否固定当前列，默认:"",可选left.right
-			 }
-		 ]
+    * 表头与表体的配置信息
     */
     config: {
       type: Array,
@@ -95,7 +80,7 @@ Component({
 			value:[],
     },
     /**
-     * 文字省略
+     * 文字过长省略
      */
     showOverflowTooltip:{
       type:Boolean,
@@ -129,10 +114,6 @@ Component({
 			console.log(item,"current click row");
       this.triggerEvent('rowClick', row);
 		},
-		_tableScroll(event){
-			const { scrollLeft, scrollTop, scrollHeight, scrollWidth, deltaX, deltaY} = event.detail;
-			console.log(event.detail,"scrollLeft");
-		}
   },
   /**
    * 监听器

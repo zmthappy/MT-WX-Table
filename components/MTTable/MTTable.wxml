@@ -1,18 +1,18 @@
-<scroll-view class="mt-table_scroll  {{border ?'mt-table-border':''}}" bindscroll=" _tableScroll" scroll-y scroll-x style="{{maxHeight != '0' ? 'max-height: ' + maxHeight + 'rpx;' : ''}}">
+<scroll-view class="mt-table-scroll  {{border ?'mt-table-border':''}}" scroll-y scroll-x style="{{maxHeight != '0' ? 'max-height: ' + maxHeight + 'rpx;' : ''}}">
 	<!--解决scroll-view的sticky失效的问题(导致表头和固定列消失的问题),需要整体包裹一个view -->
 	<view class="mt-table-component-view" style="width: {{totalWidth}}rpx;">
 		<!--表头 -->
 		<view wx:if="{{config.length}}" class="mt-header">
-			<view wx:for="{{config}}" wx:key="index" style="{{index==0&&left?'position:sticky;left:0;':''}} background-color:{{headbgColor}};text-align:{{align}};{{item.width ? 'flex-basis:'+item.width :''}};flex-grow:{{item.width ? 'none' : '1'}}" class="mt-header-column mt-header-font  {{border?'mt-header-column-border':''}}">
+			<view wx:for="{{config}}" wx:key="index" style="{{index==0&&left?'position:sticky;left:0;':''}} background-color:{{headbgColor}};text-align:{{align}};{{item.width ? 'flex-basis:'+ item.width :''}};flex-grow:{{item.width ? 'none' : '1'}}" class="mt-header-column mt-header-font {{border?'mt-header-column-border':''}}">
 				{{item.label}}
 			</view>
 		</view>
 		<!-- 表体 -->
 		<view wx:for="{{tableData}}" wx:if="{{tableData.length}}" class="mt-table-tr  {{stripe ? 'mt-table-tr-stripe' : ''}}" wx:for-index="index" wx:for-item="tableItem" wx:key="index" data-item="{{tableItem}}" bind:tap="_rowClick">
-			<view wx:for="{{config}}" wx:for-index="configIndex" wx:key="configIndex" class="mt-table-td-cell {{showOverflowTooltip ? 'mt-table-td-cell-text-ellipsis':''}}  {{border?'mt-table-td-cell-border':''}} {{hasPadding ? 'mt-table-td-cell-padding':''}} " wx:for-item="configItem" style="{{configIndex==0&&left?'position:sticky;left:0;':''}}{{config[configIndex]['width'] ? 'flex-basis:'+config[configIndex]['width'] + ';':''}} flex-grow:{{config[configIndex]['width']? 'none' : '1'}}">
+			<view wx:for="{{config}}" wx:for-item="configItem" wx:for-index="configIndex" wx:key="configIndex" class="mt-table-td-cell {{showOverflowTooltip ? 'mt-table-td-cell-text-ellipsis':''}}  {{border?'mt-table-td-cell-border':''}} {{configItem.needPadding ? 'mt-table-td-cell-padding':''}}" style="{{configIndex==0&&left?'position:sticky;left:0;':''}}{{configItem['width'] ? 'flex-basis:'+ configItem['width'] + ';':''}} flex-grow:{{configItem['width']? 'none;' : '1;'}} text-align:{{align}}">
 				<slot name="tr-{{index}}td-{{configIndex+1}}"></slot>
 			</view>
 		</view>
-		<view class="mt-table-empty" wx:if="{{!tableData.length}}">{{emptyText?'':'暂无数据'}}</view>
+		<view class="mt-table-empty" wx:if="{{!tableData.length}}">{{emptyText}}</view>
 	</view>
 </scroll-view>
