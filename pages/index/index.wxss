@@ -61,7 +61,3 @@ page {
 .nickname-input {
 	flex: 1;
 }
-
-.mt-table-tr-stripe-outer:nth-child(2n+1) {
-	background-color: red !important;
-}

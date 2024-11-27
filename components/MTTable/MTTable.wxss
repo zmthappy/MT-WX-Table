@@ -1,6 +1,6 @@
 .mt-table_scroll {
-	width: 100%;
-	height: 100%;
+	min-width: 100%;
+	min-height: 100%;
 }
 
 .mt-table-component-view {
@@ -13,8 +13,8 @@
 .mt-header {
 	display: flex;
 	flex-direction: row;
-	font-weight: bold;
 	flex-wrap: nowrap;
+	align-items: stretch;
 	position: sticky;
 	top: 0;
 	z-index: 999;
@@ -24,14 +24,16 @@
 .mt-header-font {
 	font-size: 24rpx;
 	font-weight: bold;
-	color: purple;
+	color: #4e4e4e;
 }
 
 .mt-header .mt-header-column {
 	padding: 6rpx 10rpx;
 	min-height: 40rpx;
-	min-width: 80rpx;
-	flex-shrink: 0;
+	/* min-width: 80rpx; */
+	/* flex-basis: 80rpx;
+	flex-shrink: 0; */
+	flex: 0 0 80rpx;
 	word-break: break-all;
 	word-wrap: break-word;
 	display: flex;
@@ -45,7 +47,6 @@
 	border-bottom: solid 2rpx #dfdfdf;
 }
 
-/*  */
 .mt-header .mt-header-column-border:last-child {
 	border-right: solid 0rpx #dfdfdf;
 }
@@ -55,42 +56,32 @@
 	border: solid 2rpx #dfdfdf;
 }
 
-/* 空白文字---无数据时 */
-.opText {
-	flex-shrink: 0;
-	word-break: break-all;
-	word-wrap: break-word;
-	display: flex;
-	flex-direction: column;
-	min-width: 150rpx;
-	min-height: 80rpx;
-	justify-content: center;
-	color: #5C4EFF;
-	overflow: hidden;
-}
+
 
 /* 表体的每行的样式表 */
 .mt-table-tr {
 	width: 100%;
 	display: flex;
 	flex-wrap: nowrap;
-	/* align-items: center; */
-	background-color: #ffffff;
-}
-
-.mt-table-tr-stripe:nth-child(2n+1) {
-	background-color: pink;
 }
 
 /* 包裹元素的单元格样式 */
 .mt-table-td-cell {
 	/* 设置单元格的最小高度 */
 	min-height: 40rpx;
-	min-width: 80rpx;
-	flex-shrink: 0;
+	/* min-width: 80rpx; */
+	/* flex-basis: 80rpx;
+	flex-shrink: 0; */
+	flex: 0 0 80rpx;
 	word-break: break-all;
 	word-wrap: break-word;
 	box-sizing: border-box;
+	background-color: #ffffff;
+}
+
+/* 斑马纹 */
+.mt-table-tr-stripe:nth-child(2n+1) .mt-table-td-cell {
+	background-color: pink;
 }
 
 /* 设置单元格文字过长省略 */
@@ -113,4 +104,19 @@
 .mt-table-td-cell-border {
 	border-right: solid 2rpx #dfdfdf;
 	border-bottom: solid 2rpx #dfdfdf;
+}
+
+/* 空白文字---无数据时 */
+.mt-table-empty {
+	min-width: 150rpx;
+	min-height: 80rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex: 0 0 auto;
+	align-items: center;
+	color: #3c3c3c;
+	overflow: hidden;
+	word-break: break-all;
+	word-wrap: break-word;
 }

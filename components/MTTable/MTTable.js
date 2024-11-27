@@ -1,6 +1,7 @@
 Component({
 	options: {
-    multipleSlots: true // 在组件定义时的选项中启用多slot支持
+		multipleSlots: true, // 在组件定义时的选项中启用多slot支持.
+		styleIsolation: "apply-shared",//父组件的样式会影响组件内样式
   },
   /**
    * 组件的属性列表
@@ -69,16 +70,17 @@ Component({
 				 prop:"key",//表格字段
 				 width:"279rpx",//单元格宽度
 				 label:"xx",//表头
+				 fixed:"",//是否固定当前列，默认:"",可选left.right
 			 }
 		 ]
     */
     config: {
       type: Array,
 			value: [],
-			observer:function(newVal,oldVak){
+			observer:function(newVal,oldVal){
 				let totalWidth = 0;
 				for (const item of newVal) {
-					totalWidth += item.width ? Number(item.width.slice(0,item.width.indexOf("r"))):0;
+					totalWidth += item.width ? Number(item.width.slice(0,item.width.indexOf("r"))):80;
 				}
 				this.setData({
 					totalWidth:totalWidth,
@@ -104,7 +106,7 @@ Component({
 	/**
 	 * 外部样式修改
 	 */
-	externalClasses: ['mt-header-font-outer','mt-table-tr-stripe-outer'],
+	externalClasses: [],
 
   /**
    * 组件的初始数据
@@ -123,7 +125,8 @@ Component({
      */
     _rowClick(event) {
       //当前行数据
-			const {row} = event.currentTarget.dataset;
+			const {item} = event.currentTarget.dataset;
+			console.log(item,"current click row");
       this.triggerEvent('rowClick', row);
 		},
 		_tableScroll(event){
