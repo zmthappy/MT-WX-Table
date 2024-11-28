@@ -178,4 +178,8 @@ Page({
 				})
 			}
 	},
+	// 子组件返回点击事件数据
+	rowClick(e){
+		console.log(e.detail);
+	}
 })

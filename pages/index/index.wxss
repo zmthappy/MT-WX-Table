@@ -1,6 +1,5 @@
 /**index.wxss**/
-page {
-	height: 100vh;
+.page-container {
 	display: flex;
 	flex-direction: column;
 	padding: 50rpx;

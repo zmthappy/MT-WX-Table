@@ -1,29 +1,31 @@
-<view class="mt-title">正常展示数据</view>
-<view>
-	<!-- 正常数据 -->
-	<MTTable align="center" tableData="{{tableData}}" config="{{testTableConfig}}" border maxHeight="800">
-		<block wx:for="{{tableData}}" wx:for-index="index" wx:for-item="tableItem" wx:key="index">
-			<view wx:for="{{testTableConfig}}" wx:for-index="configIndex" wx:for-item="configItem" wx:key="configIndex" slot="tr-{{index}}td-{{configIndex+1}}">
-				{{tableItem[testTableConfig[configIndex]['prop']]}}{{configItem.prop}}
-			</view>
-		</block>
-	</MTTable>
-</view>
-<!-- 带选择框的数据--自定有控制选中框 -->
-<view class="mt-title">带选择框</view>
-<view>
-	<MTTable align="center" left tableData="{{tableData}}" config="{{testTableConfigWithCheck}}" border maxHeight="800">
-		<block wx:for="{{tableData}}" wx:for-index="index" wx:for-item="tableItem" wx:key="index">
-			<view wx:for="{{testTableConfigWithCheck}}" style="width: 100%;height: 100%;" wx:for-index="configIndex" wx:for-item="configItem" wx:key="configIndex" slot="tr-{{index}}td-{{configIndex+1}}">
-				<view wx:if="{{configItem.label == '选择'}}" class="mt-table-column-check">
-					<label class="mt-checkbox">
-						<checkbox value="{{tableItem[testTableConfig[configIndex]['prop']]}}" catchtap="checked" data-checked="{{tableItem}}" />
-					</label>
-				</view>
-				<view wx:else>
+<view class="page-container">
+	<view class="mt-title">正常展示数据</view>
+	<view>
+		<!-- 正常数据 -->
+		<MTTable align="center" tableData="{{tableData}}" config="{{testTableConfig}}" border maxHeight="800" bindrowClick="rowClick">
+			<block wx:for="{{tableData}}" wx:for-index="index" wx:for-item="tableItem" wx:key="index">
+				<view wx:for="{{testTableConfig}}" wx:for-index="configIndex" wx:for-item="configItem" wx:key="configIndex" slot="tr-{{index}}td-{{configIndex+1}}">
 					{{tableItem[testTableConfig[configIndex]['prop']]}}{{configItem.prop}}
 				</view>
-			</view>
-		</block>
-	</MTTable>
+			</block>
+		</MTTable>
+	</view>
+	<!-- 带选择框的数据--自定有控制选中框 -->
+	<view class="mt-title">带选择框</view>
+	<view>
+		<MTTable align="center" left tableData="{{tableData}}" config="{{testTableConfigWithCheck}}" border maxHeight="800">
+			<block wx:for="{{tableData}}" wx:for-index="index" wx:for-item="tableItem" wx:key="index">
+				<view wx:for="{{testTableConfigWithCheck}}" style="width: 100%;height: 100%;" wx:for-index="configIndex" wx:for-item="configItem" wx:key="configIndex" slot="tr-{{index}}td-{{configIndex+1}}">
+					<view wx:if="{{configItem.label == '选择'}}" class="mt-table-column-check">
+						<label class="mt-checkbox">
+							<checkbox value="{{tableItem[testTableConfig[configIndex]['prop']]}}" catchtap="checked" data-checked="{{tableItem}}" />
+						</label>
+					</view>
+					<view wx:else>
+						{{tableItem[testTableConfig[configIndex]['prop']]}}{{configItem.prop}}
+					</view>
+				</view>
+			</block>
+		</MTTable>
+	</view>
 </view>

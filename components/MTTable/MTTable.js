@@ -118,7 +118,6 @@ Component({
     _rowClick(event) {
       //当前行数据
 			const {item} = event.currentTarget.dataset;
-			console.log(item,"current click row");
       this.triggerEvent('rowClick', item);
 		},
   },
