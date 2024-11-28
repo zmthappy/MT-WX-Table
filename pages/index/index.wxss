@@ -3,61 +3,41 @@ page {
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
+	padding: 50rpx;
 }
 
-.scrollarea {
-	flex: 1;
-	overflow-y: hidden;
+.mt-title {
+	font-size: 32rpx;
+	color: pink;
+	font-weight: bold;
+	margin-top: 50rpx;
+	margin-bottom: 16rpx;
 }
 
-.userinfo {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	color: #aaa;
-	width: 80%;
-}
-
-.userinfo-avatar {
-	overflow: hidden;
-	width: 128rpx;
-	height: 128rpx;
-	margin: 20rpx;
-	border-radius: 50%;
-}
-
-.usermotto {
-	margin-top: 200px;
-}
-
-.avatar-wrapper {
-	padding: 0;
-	width: 56px !important;
-	border-radius: 8px;
-	margin-top: 40px;
-	margin-bottom: 40px;
-}
-
-.avatar {
-	display: block;
-	width: 56px;
-	height: 56px;
-}
-
-.nickname-wrapper {
-	display: flex;
+/*带选择框的数据--自定有控制选中框(相关样式)*/
+.mt-table-column-check {
 	width: 100%;
-	padding: 16px;
-	box-sizing: border-box;
-	border-top: .5px solid rgba(0, 0, 0, 0.1);
-	border-bottom: .5px solid rgba(0, 0, 0, 0.1);
-	color: black;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.nickname-label {
-	width: 105px;
+/* 修改原生微信选择框样式 */
+checkbox .wx-checkbox-input {
+	border-radius: 50% !important;
+	/* background-color: #FFFFFF; */
+	border: 2rpx solid #828181 !important;
 }
 
-.nickname-input {
-	flex: 1;
+/*checkbox选中后样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+	border: 2rpx solid #24c023 !important;
+	background-color: #24c023 !important;
+	color: #FFFFFF !important;
+}
+
+/*checkbox选中后图标样式  */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+	color: #FFFFFF !important;
 }

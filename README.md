@@ -19,3 +19,4 @@
 	9.stripe:开启斑马纹;默认true(Boolean) <br/>
 	10.emptyText:无数据显示;
 	11.showOverflowTooltip:表体单元格省略;默认false(Boolean)
+	12.chioceKeys:选择框的字段;checked(String)[开放选择框的控制权限，自定义修改]

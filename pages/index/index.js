@@ -41,10 +41,57 @@ Page({
 				needPadding:false,
 			},
 		],
+		// 测试用
+		testTableConfigWithCheck:[
+			{
+				prop:"checked",
+				width:"80rpx",
+				label:"选择",
+				needPadding:true,
+			},
+			{
+				prop:"Message",
+				width:"150rpx",
+				label:"first",
+				needPadding:true,
+			},
+			{
+				prop:"Name",
+				width:"150rpx",
+				label:"second",
+				needPadding:true,
+			},
+			{
+				prop:"Message",
+				width:"150rpx",
+				label:"three",
+				needPadding:true,
+			},
+			{
+				prop:"Name",
+				width:"150rpx",
+				label:"fourfourf",
+				needPadding:true,
+			},
+			{
+				prop:"Message",
+				width:"150rpx",
+				label:"five",
+				needPadding:true,
+			},
+			{
+				prop:"Message",
+				width:"150rpx",
+				label:"five",
+				needPadding:false,
+			},
+		],
 		tableData:[
 			{
 				Name:"ccccccccccccccccccccccc",
 				Message:"111111111111111111111111",
+				checked:false,
+				id:1,
 				testArray:[
 					{
 					name:"11",
@@ -59,6 +106,8 @@ Page({
 			{
 				Name:"cccccccccccc",
 				Message:"111111111111111111111111",
+				checked:false,
+				id:2,
 				testArray:[{
 					name:"11",
 					label:"cc",
@@ -67,6 +116,8 @@ Page({
 			{
 				Name:"cccccccccccccc",
 				Message:"111111111111111111111111",
+				checked:false,
+				id:3,
 				testArray:[{
 					name:"11",
 					label:"cc",
@@ -75,6 +126,8 @@ Page({
 			{
 				Name:"cccccccccccc",
 				Message:"111111111111111111111111",
+				checked:false,
+				id:4,
 				testArray:[{
 					name:"11",
 					label:"cc",
@@ -83,6 +136,8 @@ Page({
 			{
 				Name:"cccccccccccccc",
 				Message:"111111111111111111111111",
+				checked:false,
+				id:5,
 				testArray:[{
 					name:"11",
 					label:"cc",
@@ -91,6 +146,8 @@ Page({
 			{
 				Name:"cccccccccccc",
 				Message:"111111111111111111111111",
+				checked:false,
+				id:6,
 				testArray:[{
 					name:"11",
 					label:"cc",
@@ -99,11 +156,26 @@ Page({
 			{
 				Name:"cccccccccccccc",
 				Message:"111111111111111111111111",
+				checked:false,
+				id:7,
 				testArray:[{
 					name:"11",
 					label:"cc",
 				}]
 			},
 		]
-  },
+	},
+	// 选择框点击事件
+	checked(e){
+			let {checked}= e.currentTarget.dataset;
+			let index = this.data.tableData.findIndex(t=>t.id == checked.id);
+			let tableData = this.data.tableData;
+			console.log(index,"index");
+			if(index != -1){
+				tableData[index].checked = 	!tableData[index].checked;
+				this.setData({
+					tableData
+				})
+			}
+	},
 })

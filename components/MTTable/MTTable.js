@@ -7,6 +7,13 @@ Component({
    * 组件的属性列表
    */
   properties: {
+		/**
+		 * 当前存在选中框时选择框的字段
+		 */
+		chioceKeys:{
+			type:String,
+			value:"checked"
+		},
     /**
      * 对齐方式 left center right
      * */
@@ -112,7 +119,7 @@ Component({
       //当前行数据
 			const {item} = event.currentTarget.dataset;
 			console.log(item,"current click row");
-      this.triggerEvent('rowClick', row);
+      this.triggerEvent('rowClick', item);
 		},
   },
   /**
