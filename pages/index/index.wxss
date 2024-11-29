@@ -24,9 +24,11 @@
 
 /* 修改原生微信选择框样式 */
 checkbox .wx-checkbox-input {
-	border-radius: 50% !important;
+	/* border-radius: 50% !important; */
 	/* background-color: #FFFFFF; */
 	border: 2rpx solid #828181 !important;
+	width: 32rpx;
+	height: 32rpx;
 }
 
 /*checkbox选中后样式  */

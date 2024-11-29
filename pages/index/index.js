@@ -170,13 +170,18 @@ Page({
 			let {checked}= e.currentTarget.dataset;
 			let index = this.data.tableData.findIndex(t=>t.id == checked.id);
 			let tableData = this.data.tableData;
-			console.log(index,"index");
 			if(index != -1){
 				tableData[index].checked = 	!tableData[index].checked;
 				this.setData({
 					tableData
 				})
 			}
+	},
+	// 选择框全选--请将所有选择数据塞入要勇于勾选的数据
+	changeChoice(e){
+		this.setData({
+			tableData:e.detail
+		})
 	},
 	// 子组件返回点击事件数据
 	rowClick(e){

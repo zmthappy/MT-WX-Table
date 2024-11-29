@@ -19,7 +19,24 @@ Component({
      * */
     align: {
       type: String,
-      value: 'left'
+			value: 'left',
+			observer:function(newVal,oldVal){
+				let _align = "flex-start";
+				switch(newVal){
+					case "left":
+						_align = "flex-start";
+						break;
+					case "center":
+						_align = "center";
+						break;
+					case "right":
+						_align = "flex-end";
+						break
+				};
+				this.setData({
+					_align
+				})
+			}
     },
     /**
      * 指定表格高度
@@ -85,7 +102,23 @@ Component({
 		tableData:{
 			type:Array,
 			value:[],
-    },
+			observer:function(newVal,oldVal){
+				let checkedAll = true;//所有选择框都选择
+				let hasChcked = false;//存在未选中的选择框
+				for (const tableItem of newVal) {
+					if(tableItem[this.data.chioceKeys]){
+						hasChcked = true;
+					}
+					if(!tableItem[this.data.chioceKeys]){
+						checkedAll = false;
+					}
+				}
+				this.setData({
+					checkedAll,
+					hasChcked,
+				})
+			}
+		},
     /**
      * 文字过长省略
      */
@@ -106,6 +139,11 @@ Component({
   data: {
 		// 当前单元格汇总的宽度
 		totalWidth:0,
+		// 单元格内项目位置
+		_align:"flex-start",
+		// 判断是否勾选了所有的选择
+		checkedAll:false,
+		hasChcked:false,
 	},
   /**
    * 组件的方法列表
@@ -120,6 +158,25 @@ Component({
 			const {item} = event.currentTarget.dataset;
       this.triggerEvent('rowClick', item);
 		},
+
+		/**
+		 * 选择所有数据
+		 */
+		_chioceAll(){
+			let {tableData,chioceKeys} = this.data;
+			// 勾选全部
+			if(this.data.checkedAll){
+				for (const tableItem of tableData) {
+					tableItem[chioceKeys] = false;
+				}
+			}else{
+			// 取消勾选全部
+				for (const tableItem of tableData) {
+					tableItem[chioceKeys] = true;
+				}
+			};
+			this.triggerEvent("changeChoice",tableData)
+		}
   },
   /**
    * 监听器
