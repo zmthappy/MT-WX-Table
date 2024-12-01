@@ -5,41 +5,41 @@ Page({
 		// 测试用
 		testTableConfig:[
 			{
-				prop:"Message",
-				width:"150rpx",
-				label:"first",
-				needPadding:true,
-			},
-			{
 				prop:"Name",
 				width:"150rpx",
-				label:"second",
+				label:"姓名",
 				needPadding:true,
 			},
 			{
-				prop:"Message",
+				prop:"sex",
 				width:"150rpx",
-				label:"three",
+				label:"性别",
 				needPadding:true,
 			},
 			{
-				prop:"Name",
+				prop:"schoolNumber",
 				width:"150rpx",
-				label:"fourfourf",
+				label:"学号",
 				needPadding:true,
 			},
 			{
-				prop:"Message",
+				prop:"adress",
 				width:"150rpx",
-				label:"five",
+				label:"住址",
 				needPadding:true,
 			},
 			{
-				prop:"Message",
+				prop:"phonenumber",
 				width:"150rpx",
-				label:"five",
-				needPadding:false,
+				label:"电话",
+				needPadding:true,
 			},
+			// {
+			// 	prop:"Message",
+			// 	width:"150rpx",
+			// 	label:"five",
+			// 	needPadding:true,
+			// },
 		],
 		// 测试用
 		testTableConfigWithCheck:[
@@ -49,49 +49,52 @@ Page({
 				label:"选择",
 				needPadding:true,
 			},
-			{
-				prop:"Message",
-				width:"150rpx",
-				label:"first",
-				needPadding:true,
-			},
-			{
+      {
 				prop:"Name",
 				width:"150rpx",
-				label:"second",
+				label:"姓名",
 				needPadding:true,
 			},
 			{
-				prop:"Message",
+				prop:"sex",
 				width:"150rpx",
-				label:"three",
+				label:"性别",
 				needPadding:true,
 			},
 			{
-				prop:"Name",
+				prop:"schoolNumber",
 				width:"150rpx",
-				label:"fourfourf",
+				label:"学号",
 				needPadding:true,
 			},
 			{
-				prop:"Message",
+				prop:"adress",
 				width:"150rpx",
-				label:"five",
+				label:"住址",
 				needPadding:true,
 			},
 			{
-				prop:"Message",
+				prop:"phonenumber",
 				width:"150rpx",
-				label:"five",
-				needPadding:false,
+				label:"电话",
+				needPadding:true,
+      },
+      {
+				prop:"operation",
+				width:"150rpx",
+				label:"操作",
+				needPadding:true,
 			},
 		],
 		tableData:[
 			{
-				Name:"ccccccccccccccccccccccc",
-				Message:"111111111111111111111111",
+				Name:"小张",
+        sex:"男",
+        schoolNumber:1,
 				checked:false,
-				id:1,
+        id:1,
+        adress:"浙江省XXX市",
+        phonenumber:"132XXXXX4578",
 				testArray:[
 					{
 					name:"11",
@@ -104,64 +107,157 @@ Page({
 				]
 			},
 			{
-				Name:"cccccccccccc",
-				Message:"111111111111111111111111",
+				Name:"小张",
+        sex:"男",
+        schoolNumber:1,
 				checked:false,
-				id:2,
-				testArray:[{
+        id:12,
+        adress:"浙江省XXX市",
+        phonenumber:"132XXXXX4578",
+				testArray:[
+					{
 					name:"11",
 					label:"cc",
-				}]
-			},
-			{
-				Name:"cccccccccccccc",
-				Message:"111111111111111111111111",
+					},
+					{
+						name:"11",
+						label:"cc",
+					},
+				]
+      },
+      {
+				Name:"小张",
+        sex:"男",
+        schoolNumber:1,
 				checked:false,
-				id:3,
-				testArray:[{
+        id:13,
+        adress:"浙江省XXX市",
+        phonenumber:"132XXXXX4578",
+				testArray:[
+					{
 					name:"11",
 					label:"cc",
-				}]
-			},
-			{
-				Name:"cccccccccccc",
-				Message:"111111111111111111111111",
+					},
+					{
+						name:"11",
+						label:"cc",
+					},
+				]
+      },
+      {
+				Name:"小张",
+        sex:"男",
+        schoolNumber:1,
 				checked:false,
-				id:4,
-				testArray:[{
+        id:14,
+        adress:"浙江省XXX市",
+        phonenumber:"132XXXXX4578",
+				testArray:[
+					{
 					name:"11",
 					label:"cc",
-				}]
-			},
-			{
-				Name:"cccccccccccccc",
-				Message:"111111111111111111111111",
+					},
+					{
+						name:"11",
+						label:"cc",
+					},
+				]
+      },
+      {
+				Name:"小张",
+        sex:"男",
+        schoolNumber:1,
 				checked:false,
-				id:5,
-				testArray:[{
+        id:15,
+        adress:"浙江省XXX市",
+        phonenumber:"132XXXXX4578",
+				testArray:[
+					{
 					name:"11",
 					label:"cc",
-				}]
-			},
-			{
-				Name:"cccccccccccc",
-				Message:"111111111111111111111111",
+					},
+					{
+						name:"11",
+						label:"cc",
+					},
+				]
+      },
+      {
+				Name:"小张",
+        sex:"男",
+        schoolNumber:1,
 				checked:false,
-				id:6,
-				testArray:[{
+        id:16,
+        adress:"浙江省XXX市",
+        phonenumber:"132XXXXX4578",
+				testArray:[
+					{
 					name:"11",
 					label:"cc",
-				}]
-			},
-			{
-				Name:"cccccccccccccc",
-				Message:"111111111111111111111111",
+					},
+					{
+						name:"11",
+						label:"cc",
+					},
+				]
+      },
+      
+      {
+				Name:"小张",
+        sex:"男",
+        schoolNumber:1,
 				checked:false,
-				id:7,
-				testArray:[{
+        id:17,
+        adress:"浙江省XXX市",
+        phonenumber:"132XXXXX4578",
+				testArray:[
+					{
 					name:"11",
 					label:"cc",
-				}]
+					},
+					{
+						name:"11",
+						label:"cc",
+					},
+				]
+      },	
+      {
+				Name:"小张",
+        sex:"男",
+        schoolNumber:1,
+				checked:false,
+        id:18,
+        adress:"浙江省XXX市",
+        phonenumber:"132XXXXX4578",
+				testArray:[
+					{
+					name:"11",
+					label:"cc",
+					},
+					{
+						name:"11",
+						label:"cc",
+					},
+				]
+      },
+      {
+				Name:"小张",
+        sex:"男",
+        schoolNumber:1,
+				checked:false,
+        id:19,
+        adress:"浙江省XXX市",
+        phonenumber:"132XXXXX4578",
+				testArray:[
+					{
+					name:"11",
+					label:"cc",
+					},
+					{
+						name:"11",
+						label:"cc",
+					},
+				]
 			},
 		]
 	},
@@ -186,5 +282,8 @@ Page({
 	// 子组件返回点击事件数据
 	rowClick(e){
 		console.log(e.detail);
-	}
+  },
+  opration(e){
+    console.log(e.currentTarget.dataset.row,"操作列点击");
+  }
 })

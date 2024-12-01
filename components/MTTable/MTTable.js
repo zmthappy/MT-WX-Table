@@ -93,7 +93,8 @@ Component({
 				}
 				this.setData({
 					totalWidth:totalWidth,
-				})
+        })
+        console.log(totalWidth,'totalWidth');
 			}
 		},
 		/**

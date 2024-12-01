@@ -13,8 +13,7 @@
 		</view>
 		<!-- 表体 -->
 		<view wx:for="{{tableData}}" wx:if="{{tableData.length}}" class="mt-table-tr {{tableItem[chioceKeys] ? 'mt-table-tr-chioce' : ''}}  {{stripe&&(index%2!=0)&&!tableItem[chioceKeys] ? 'mt-table-tr-stripe' : ''}}" wx:for-index="index" wx:for-item="tableItem" wx:key="index" data-item="{{tableItem}}" bind:tap="_rowClick">
-			<view wx:for="{{config}}" wx:for-item="configItem" wx:for-index="configIndex" wx:key="configIndex" class="mt-table-td-cell {{showOverflowTooltip ? 'mt-table-td-cell-text-ellipsis':''}}  {{border?'mt-table-td-cell-border':''}} {{configItem.needPadding ? 'mt-table-td-cell-padding':''}}" style="{{configIndex==0&&left?'position:sticky;left:0;':''}}{{configItem['width'] ? 'flex-basis:'+ configItem['width'] + ';':''}} flex-grow:{{configItem['width']? 'none;' : '1;'}}justify-content:{{_align +';'}}">
-				{{showOverflowTooltip}}
+			<view wx:for="{{config}}" wx:for-item="configItem" wx:for-index="configIndex" wx:key="configIndex" class="mt-table-td-cell {{showOverflowTooltip ? 'mt-table-td-cell-text-ellipsis':''}}  {{border?'mt-table-td-cell-border':''}} {{configItem.needPadding ? 'mt-table-td-cell-padding':''}}" style="{{configIndex==0&&left?'position:sticky;left:0;':''}}{{configItem['width'] ? 'flex-basis:'+ configItem['width'] + ';':''}} flex-grow:{{configItem['width']? 'none;' : '1;'}}">
 				<slot name="tr-{{index}}td-{{configIndex+1}}"></slot>
 			</view>
 		</view>

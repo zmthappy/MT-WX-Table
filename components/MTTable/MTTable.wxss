@@ -7,7 +7,8 @@
 	min-width: 100%;
 	min-height: 100%;
 	position: relative;
-	background-color: #fff;
+  background-color: #fff;
+  box-sizing: content-box;
 }
 
 .mt-header {
@@ -35,7 +36,7 @@
 	word-wrap: break-word;
 	display: flex;
 	flex-direction: row;
-	box-sizing: border-box;
+	/* box-sizing: border-box; */
 }
 
 .mt-header .mt-header-column-border {
@@ -54,7 +55,7 @@
 	/* border-radius: 50%; */
 	background-color: #ffffff;
 	border: 2rpx solid #828181;
-	box-sizing: border-box;
+	/* box-sizing: border-box; */
 	position: relative;
 	border-radius: 8rpx;
 }
@@ -84,7 +85,6 @@
 .mt-header .mt-header-column .mt-header-checked-container-all {
 	width: 32rpx;
 	height: 32rpx;
-	/* border-radius: 50%; */
 	background-color: #24c023;
 	position: relative;
 	border-radius: 8rpx;
@@ -92,14 +92,12 @@
 
 .mt-header .mt-header-column .mt-header-checked-container-all::before {
 	box-sizing: content-box;
-	content: "✓";
+	content: "√";
 	position: absolute;
 	display: inline-block;
 	color: #ffffff;
 	width: 16rpx;
 	height: 2rpx;
-	/* background-color: #ffffff; */
-	/* top: 50%; */
 	left: 40%;
 	transform: translate(-50%, -50%);
 }
@@ -124,7 +122,7 @@
 	flex: 0 0 80rpx;
 	word-break: break-all;
 	word-wrap: break-word;
-	box-sizing: border-box;
+	/* box-sizing: border-box; */
 	background-color: #ffffff;
 }
 
@@ -138,6 +136,7 @@
 	color: #fff;
 	background-color: blue;
 }
+
 
 /* 设置单元格文字过长省略 */
 .mt-table-td-cell-text-ellipsis {
