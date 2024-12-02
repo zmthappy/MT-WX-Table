@@ -28,12 +28,12 @@ Page({
 				label:"住址",
 				needPadding:true,
 			},
-			{
-				prop:"phonenumber",
-				width:"150rpx",
-				label:"电话",
-				needPadding:true,
-			},
+			// {
+			// 	prop:"phonenumber",
+			// 	width:"150rpx",
+			// 	label:"电话",
+			// 	needPadding:true,
+			// },
 			// {
 			// 	prop:"Message",
 			// 	width:"150rpx",

@@ -7,8 +7,8 @@
 	min-width: 100%;
 	min-height: 100%;
 	position: relative;
-  background-color: #fff;
-  box-sizing: content-box;
+	background-color: #fff;
+	box-sizing: content-box;
 }
 
 .mt-header {
@@ -105,7 +105,12 @@
 /* 外部包裹容器的边框 */
 .mt-table-border {
 	border: solid 2rpx #dfdfdf;
+	/* border-bottom: none; */
 }
+
+/* .mt-table-border-empty {
+	border: solid 2rpx #dfdfdf;
+} */
 
 
 /* 表体的每行的样式表 */
@@ -113,6 +118,7 @@
 	width: 100%;
 	display: flex;
 	flex-wrap: nowrap;
+
 }
 
 /* 包裹元素的单元格样式 */
@@ -128,13 +134,13 @@
 
 /* 斑马纹 */
 .mt-table-tr-stripe:nth-child(2n+1) .mt-table-td-cell {
-	background-color: pink;
+	background-color: #FAFAFA;
 }
 
 /*带选择框选中*/
 .mt-table-tr-chioce .mt-table-td-cell {
 	color: #fff;
-	background-color: blue;
+	background-color: plum;
 }
 
 
@@ -168,6 +174,15 @@
 .mt-table-td-cell-border {
 	border-right: solid 2rpx #dfdfdf;
 	border-bottom: solid 2rpx #dfdfdf;
+}
+
+/*设置最后一列的左边框和最后一行的下边框为空*/
+.mt-table-td-cell-border:last-child {
+	border-right: none;
+}
+
+.mt-table-tr:last-child .mt-table-td-cell-border {
+	border-bottom: none;
 }
 
 /* 空白文字---无数据时 */

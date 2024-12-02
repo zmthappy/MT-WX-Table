@@ -89,12 +89,12 @@ Component({
 			observer:function(newVal,oldVal){
 				let totalWidth = 0;
 				for (const item of newVal) {
-					totalWidth += item.width ? Number(item.width.slice(0,item.width.indexOf("r"))):80;
+					totalWidth += item.width ? Number(item.width.slice(0,item.width.indexOf("r"))): 80;
 				}
 				this.setData({
 					totalWidth:totalWidth,
         })
-        console.log(totalWidth,'totalWidth');
+        console.log(totalWidth,'totalWidth---');
 			}
 		},
 		/**
