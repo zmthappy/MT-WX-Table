@@ -1,6 +1,7 @@
 .mt-table-scroll {
 	min-width: 100%;
 	min-height: 100%;
+	overflow: hidden;
 }
 
 .mt-table-component-view {
@@ -36,7 +37,6 @@
 	word-wrap: break-word;
 	display: flex;
 	flex-direction: row;
-	/* box-sizing: border-box; */
 }
 
 .mt-header .mt-header-column-border {
@@ -52,10 +52,8 @@
 .mt-header .mt-header-column .mt-header-checked-container-none {
 	width: 32rpx;
 	height: 32rpx;
-	/* border-radius: 50%; */
 	background-color: #ffffff;
 	border: 2rpx solid #828181;
-	/* box-sizing: border-box; */
 	position: relative;
 	border-radius: 8rpx;
 }
@@ -63,10 +61,10 @@
 .mt-header .mt-header-column .mt-header-checked-container {
 	width: 32rpx;
 	height: 32rpx;
-	/* border-radius: 50%; */
-	background-color: #24c023;
+	background-color: #1296db;
 	position: relative;
 	border-radius: 8rpx;
+	border: 2rpx solid #1296db;
 }
 
 .mt-header .mt-header-column .mt-header-checked-container::before {
@@ -85,21 +83,16 @@
 .mt-header .mt-header-column .mt-header-checked-container-all {
 	width: 32rpx;
 	height: 32rpx;
-	background-color: #24c023;
+	background-color: #1296db;
 	position: relative;
 	border-radius: 8rpx;
+	border: 2rpx solid #1296db;
 }
 
-.mt-header .mt-header-column .mt-header-checked-container-all::before {
-	box-sizing: content-box;
-	content: "√";
-	position: absolute;
-	display: inline-block;
-	color: #ffffff;
-	width: 16rpx;
-	height: 2rpx;
-	left: 40%;
-	transform: translate(-50%, -50%);
+.mt-header .mt-header-column .mt-header-checked-container-all image {
+	width: 100%;
+	height: 100%;
+	border-radius: 4rpx;
 }
 
 /* 外部包裹容器的边框 */
@@ -108,17 +101,12 @@
 	/* border-bottom: none; */
 }
 
-/* .mt-table-border-empty {
-	border: solid 2rpx #dfdfdf;
-} */
-
 
 /* 表体的每行的样式表 */
 .mt-table-tr {
 	width: 100%;
 	display: flex;
 	flex-wrap: nowrap;
-
 }
 
 /* 包裹元素的单元格样式 */
@@ -140,7 +128,7 @@
 /*带选择框选中*/
 .mt-table-tr-chioce .mt-table-td-cell {
 	color: #fff;
-	background-color: plum;
+	background-color: #4e4e4e;
 }
 
 

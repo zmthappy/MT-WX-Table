@@ -195,6 +195,11 @@ Component({
       console.log("在组件实例被从页面节点树移除时执行");
 		},
 		ready:function(){
+			console.log("页面元素已经布局完成");
+			const _that = this;
+			const query = wx.createSelectorQuery().in(_that)
+			query.select('.mt-table-tr-container').boundingClientRect(react=>{
+			}).exec();
 		}
   },
   /**

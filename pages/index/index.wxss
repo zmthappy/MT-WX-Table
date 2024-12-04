@@ -2,7 +2,7 @@
 .page-container {
 	display: flex;
 	flex-direction: column;
-  padding: 50rpx;
+	padding: 50rpx;
 }
 
 .mt-title {
@@ -31,8 +31,8 @@ checkbox .wx-checkbox-input {
 
 /*checkbox选中后样式  */
 checkbox .wx-checkbox-input.wx-checkbox-input-checked {
-	border: 2rpx solid #24c023 !important;
-	background-color: #24c023 !important;
+	border: 2rpx solid #1296db !important;
+	background-color: #1296db !important;
 	color: #FFFFFF !important;
 }
 
@@ -43,8 +43,8 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
 
 
 /* 操作列 */
-.mt-operation{
-  color:peru;
-  font-size: 24rpx;
-  font-weight: bold;
+.mt-operation {
+	color: peru;
+	font-size: 24rpx;
+	font-weight: bold;
 }
