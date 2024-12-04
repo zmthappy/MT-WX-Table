@@ -169,7 +169,9 @@
 	border-right: none;
 }
 
-.mt-table-tr:last-child .mt-table-td-cell-border {
+
+/* 如果列表高度超过给定高度时，将最后一行的下边框去掉 */
+.mt-table-tr-none-border:last-child .mt-table-td-cell-border {
 	border-bottom: none;
 }
 

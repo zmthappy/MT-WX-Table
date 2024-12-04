@@ -44,7 +44,14 @@ Component({
     maxHeight:{
       type: String,
       value: '0'
-    },
+		},
+		/***
+		 * 固定高度
+		 */
+		height:{
+      type: String,
+      value: ''
+		},
     /**
      * 是否固定左边标题
      */
@@ -90,11 +97,10 @@ Component({
 				let totalWidth = 0;
 				for (const item of newVal) {
 					totalWidth += item.width ? Number(item.width.slice(0,item.width.indexOf("r"))): 80;
-				}
+				};
 				this.setData({
 					totalWidth:totalWidth,
-        })
-        console.log(totalWidth,'totalWidth---');
+        });
 			}
 		},
 		/**
@@ -145,6 +151,8 @@ Component({
 		// 判断是否勾选了所有的选择
 		checkedAll:false,
 		hasChcked:false,
+		// 当前渲染的宽度已经超过给定宽度
+		overHeight:false,
 	},
   /**
    * 组件的方法列表
@@ -177,7 +185,17 @@ Component({
 				}
 			};
 			this.triggerEvent("changeChoice",tableData)
-		}
+		},
+		// promise---调整异步为同步
+		transformToPromise(clasName){
+			const _that = this;
+			const query = wx.createSelectorQuery().in(_that)
+			return new Promise((resolve,reject)=>{
+				query.select(clasName).boundingClientRect(react=>{
+					resolve(react.height)
+				}).exec();
+			})
+	},
   },
   /**
    * 监听器
@@ -194,14 +212,25 @@ Component({
     detached: function() {
       console.log("在组件实例被从页面节点树移除时执行");
 		},
-		ready:function(){
+	  ready: async function(){
 			console.log("页面元素已经布局完成");
-			const _that = this;
-			const query = wx.createSelectorQuery().in(_that)
-			query.select('.mt-table-tr-container').boundingClientRect(react=>{
-			}).exec();
+			let tableContainerHeight = 0;
+			tableContainerHeight += await this.transformToPromise('.mt-header');
+			tableContainerHeight += await this.transformToPromise('.mt-table-tr-container');
+			let overHeight =  this.data.overHeight;
+			if((tableContainerHeight*2) > Number(this.data.height)){
+				overHeight = true;
+			}else{
+				overHeight = false;
+			};
+			this.setData({
+				overHeight
+			})
 		}
-  },
+	},
+
+
+
   /**
    * 声明周期函数
    */

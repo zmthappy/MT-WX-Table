@@ -8,7 +8,7 @@
 		</block>
 	</MTTable>
 	<view class="mt-title">带选择框</view>
-	<MTTable align="left" left tableData="{{tableData}}" config="{{testTableConfigWithCheck}}" border maxHeight="800" bind:changeChoice="changeChoice">
+	<MTTable align="left" left tableData="{{tableData}}" config="{{testTableConfigWithCheck}}" border maxHeight="800" height="1000" bind:changeChoice="changeChoice">
 		<block wx:for="{{tableData}}" wx:for-index="index" wx:for-item="tableItem" wx:key="index">
 			<block wx:for="{{testTableConfigWithCheck}}" wx:for-index="configIndex" wx:for-item="configItem" wx:key="configIndex">
 				<view wx:if="{{configItem.label == '选择'}}" class="mt-table-column-check" slot="tr-{{index}}td-{{configIndex+1}}">
