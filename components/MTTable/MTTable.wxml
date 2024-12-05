@@ -1,9 +1,9 @@
-<scroll-view class="mt-table-scroll  {{border ?'mt-table-border':''}}" scroll-y scroll-x style="{{maxHeight != '0' && !height ? 'max-height: ' + maxHeight + 'rpx;' : 'height:'+height+'rpx'}}">
+<scroll-view class="mt-table-scroll  {{border ?'mt-table-border':''}}" scroll-y scroll-x style="{{maxHeight != '0' && !height ? 'max-height: ' + maxHeight + 'px;' : 'height:'+height+'px'}}">
 	<!--解决scroll-view的sticky失效的问题(导致表头和固定列消失的问题),需要整体包裹一个view -->
 	<view class="mt-table-component-view" style="width: {{totalWidth}}rpx;">
 		<!--表头 -->
 		<view wx:if="{{config.length}}" class="mt-header">
-			<view wx:for="{{config}}" wx:key="index" style="{{index==0&&left?'position:sticky;left:0;':''}} background-color:{{headbgColor}};	justify-content:{{_align}};{{item.width ? 'flex-basis:'+ item.width :''}};flex-grow:{{item.width ? 'none' : '1'}}" class="mt-header-column mt-header-font {{border?'mt-header-column-border':''}}">
+			<view wx:for="{{config}}" wx:key="index" style="{{item.fiexed && left?'position:sticky;left:' + item.left + 'px;':''}} background-color:{{headbgColor}};	justify-content:{{_align}};{{item.width ? 'flex-basis:'+ item.width + ';' :''}}flex-grow:{{item.width ? 'none' : '1'}}" class="mt-header-column mt-header-font {{border?'mt-header-column-border':''}} {{'mt-header-column'+index}}">
 				<!--表头选择框-->
 				<view wx:if="{{item.prop == chioceKeys}}" class="{{checkedAll ? 'mt-header-checked-container-all' : hasChcked ? 'mt-header-checked-container' : 'mt-header-checked-container-none'}} " catch:tap="_chioceAll">
 					<image src="/components/img/select.svg" mode="" wx:if="{{checkedAll}}" />
@@ -16,7 +16,7 @@
 		<view class="mt-table-tr-container">
 			<!--包裹的view用于获取当前的标题的高度  -->
 			<view wx:for="{{tableData}}" wx:if="{{tableData.length}}" class="mt-table-tr {{tableItem[chioceKeys] ? 'mt-table-tr-chioce' : ''}}  {{ overHeight ? 'mt-table-tr-none-border':''}} {{stripe&&(index%2!=0)&&!tableItem[chioceKeys] ? 'mt-table-tr-stripe' : ''}}" wx:for-index="index" wx:for-item="tableItem" wx:key="index" data-item="{{tableItem}}" bind:tap="_rowClick">
-				<view wx:for="{{config}}" wx:for-item="configItem" wx:for-index="configIndex" wx:key="configIndex" class="mt-table-td-cell {{showOverflowTooltip ? 'mt-table-td-cell-text-ellipsis':''}}  {{border?'mt-table-td-cell-border':''}} {{configItem.needPadding ? 'mt-table-td-cell-padding':''}}" style="{{configIndex==0&&left?'position:sticky;left:0;':''}}{{configItem['width'] ? 'flex-basis:'+ configItem['width'] + ';':''}} flex-grow:{{configItem['width']? 'none;' : '1;'}}">
+				<view wx:for="{{config}}" wx:for-item="configItem" wx:for-index="configIndex" wx:key="configIndex" class="mt-table-td-cell {{showOverflowTooltip ? 'mt-table-td-cell-text-ellipsis':''}}  {{border?'mt-table-td-cell-border':''}} {{configItem.needPadding ? 'mt-table-td-cell-padding':''}}" style="{{configItem.fiexed&&left?'position:sticky;left:'+ configItem.left + 'px;':''}}{{configItem['width'] ? 'flex-basis:'+ configItem['width'] + ';':''}} flex-grow:{{configItem['width']? 'none;' : '1;'}}">
 					<slot name="tr-{{index}}td-{{configIndex+1}}"></slot>
 				</view>
 			</view>

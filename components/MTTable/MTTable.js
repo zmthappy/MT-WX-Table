@@ -39,11 +39,11 @@ Component({
 			}
     },
     /**
-     * 指定表格高度
+     * 指定表格最大高度
      */
     maxHeight:{
       type: String,
-      value: '0'
+      value: '20'
 		},
 		/***
 		 * 固定高度
@@ -90,7 +90,7 @@ Component({
    /**
     * 表头与表体的配置信息
     */
-    config: {
+	 configurator: {
       type: Array,
 			value: [],
 			observer:function(newVal,oldVal){
@@ -98,9 +98,13 @@ Component({
 				for (const item of newVal) {
 					totalWidth += item.width ? Number(item.width.slice(0,item.width.indexOf("r"))): 80;
 				};
+				// 重置当前固定列的位置config数组
+				let config = []
+				config =  this.setFiexdColumnLoaction();
 				this.setData({
 					totalWidth:totalWidth,
-        });
+					config,
+				});
 			}
 		},
 		/**
@@ -119,7 +123,7 @@ Component({
 					if(!tableItem[this.data.chioceKeys]){
 						checkedAll = false;
 					}
-				}
+				};
 				this.setData({
 					checkedAll,
 					hasChcked,
@@ -151,8 +155,10 @@ Component({
 		// 判断是否勾选了所有的选择
 		checkedAll:false,
 		hasChcked:false,
-		// 当前渲染的宽度已经超过给定宽度
+		// 当前渲染的高度已经超过给定高度
 		overHeight:false,
+		// 表头表体配置信息
+		config:[],
 	},
   /**
    * 组件的方法列表
@@ -186,16 +192,69 @@ Component({
 			};
 			this.triggerEvent("changeChoice",tableData)
 		},
-		// promise---调整异步为同步
-		transformToPromise(clasName){
+		// promise---调整异步为同步(clasName:包裹表体或者表头的类名)
+		transformToPromise(clasName,attribute){
+				const _that = this;
+				const query = wx.createSelectorQuery().in(_that)
+				return new Promise((resolve,reject)=>{
+					query.select(clasName).boundingClientRect(react=>{
+						resolve(react[attribute])
+					}).exec();
+				})
+		},
+		// 如果当前的列配置了Fixed=true时，将排序顺序前移(left="左移";right="右移")
+		setFiexdColumnLoaction(){
 			const _that = this;
-			const query = wx.createSelectorQuery().in(_that)
-			return new Promise((resolve,reject)=>{
-				query.select(clasName).boundingClientRect(react=>{
-					resolve(react.height)
-				}).exec();
-			})
-	},
+			let configArray = _that.data.configurator;
+			let configResetArray = [];
+			for (const itemValue of configArray) {
+				let index = configArray.findIndex(t=>t.prop == itemValue.prop);
+				if(itemValue?.fiexed){
+					let setFixedLoaction = configResetArray.length;
+					for (const resetItem of configResetArray) {
+						if(!resetItem?.fiexed){
+							setFixedLoaction = configArray.findIndex(t=>t.prop == resetItem.prop);
+							break;
+						};
+					};
+					configResetArray.splice(setFixedLoaction,0,itemValue);
+				}else{
+					itemValue.fiexed = false;
+					itemValue.fiexdOrder = index + 1;
+					configResetArray.push(itemValue)
+				};
+			};
+			return configResetArray;
+		},
+		// 计算当前配置信息的固定列开始初始偏移位置
+	  async	setColumnFixedMovewidth(configResetArray){	
+			 const _that = this;
+			 for (const item of configResetArray) {
+				let index = configResetArray.findIndex(t=>t.prop == item.prop);
+				if(item?.fiexed){
+					if(item?.fiexedPosition){
+						item.fiexedPosition = 'left';
+					};
+					if(index == 0){
+						item.left = 0;
+					}else{
+						item.left = 0;
+						if(index != -1){
+							// 无论是否配置宽度按都需要计算一下，固定列的
+							for(let i = 0; i<=index;i++){
+								if(i == index){
+									break;
+								};
+								item.left += (await _that.transformToPromise('.mt-header-column'+i,'width'));
+							};
+						};
+					}
+				};
+			 }
+			 _that.setData({
+				 config:configResetArray
+			 });
+		},
   },
   /**
    * 监听器
@@ -215,21 +274,22 @@ Component({
 	  ready: async function(){
 			console.log("页面元素已经布局完成");
 			let tableContainerHeight = 0;
-			tableContainerHeight += await this.transformToPromise('.mt-header');
-			tableContainerHeight += await this.transformToPromise('.mt-table-tr-container');
+			tableContainerHeight += await this.transformToPromise('.mt-header','height');
+			tableContainerHeight += await this.transformToPromise('.mt-table-tr-container','height');
+			// 解决表格下边框重叠的问题
 			let overHeight =  this.data.overHeight;
-			if((tableContainerHeight*2) > Number(this.data.height)){
+			if(tableContainerHeight > Number(this.data.height)){
 				overHeight = true;
 			}else{
 				overHeight = false;
 			};
 			this.setData({
-				overHeight
-			})
+				overHeight,
+			});
+			// 计算配置表格信息的是否固定
+			await this.setColumnFixedMovewidth(this.data.config);
 		}
 	},
-
-
 
   /**
    * 声明周期函数

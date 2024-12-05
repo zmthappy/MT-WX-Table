@@ -2,6 +2,7 @@
 	min-width: 100%;
 	min-height: 100%;
 	overflow: hidden;
+	box-sizing: border-box;
 }
 
 .mt-table-component-view {
@@ -9,7 +10,7 @@
 	min-height: 100%;
 	position: relative;
 	background-color: #fff;
-	box-sizing: content-box;
+	box-sizing: border-box;
 }
 
 .mt-header {
@@ -37,6 +38,7 @@
 	word-wrap: break-word;
 	display: flex;
 	flex-direction: row;
+	box-sizing: border-box;
 }
 
 .mt-header .mt-header-column-border {
@@ -68,7 +70,7 @@
 }
 
 .mt-header .mt-header-column .mt-header-checked-container::before {
-	box-sizing: content-box;
+	box-sizing: border-box;
 	content: "";
 	position: absolute;
 	display: inline-block;
@@ -116,12 +118,12 @@
 	flex: 0 0 80rpx;
 	word-break: break-all;
 	word-wrap: break-word;
-	/* box-sizing: border-box; */
+	box-sizing: border-box;
 	background-color: #ffffff;
 }
 
 /* 斑马纹 */
-.mt-table-tr-stripe:nth-child(2n+1) .mt-table-td-cell {
+.mt-table-tr-stripe .mt-table-td-cell {
 	background-color: #FAFAFA;
 }
 

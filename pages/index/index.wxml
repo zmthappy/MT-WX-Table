@@ -1,6 +1,6 @@
 <view class="page-container">
 	<view class="mt-title">正常展示数据</view>
-	<MTTable align="center" tableData="{{tableData}}" showOverflowTooltip="{{true}}" config="{{testTableConfig}}" border maxHeight="800" bindrowClick="rowClick">
+	<MTTable align="center" tableData="{{tableData}}" showOverflowTooltip="{{true}}" configurator="{{testTableConfig}}" border maxHeight="400" bindrowClick="rowClick">
 		<block wx:for="{{tableData}}" wx:for-index="index" wx:for-item="tableItem" wx:key="index">
 			<view wx:for="{{testTableConfig}}" wx:for-index="configIndex" wx:for-item="configItem" wx:key="configIndex" slot="tr-{{index}}td-{{configIndex+1}}">
 				{{tableItem[testTableConfig[configIndex]['prop']]}}
@@ -8,7 +8,7 @@
 		</block>
 	</MTTable>
 	<view class="mt-title">带选择框</view>
-	<MTTable align="left" left tableData="{{tableData}}" config="{{testTableConfigWithCheck}}" border maxHeight="800" height="1000" bind:changeChoice="changeChoice">
+	<MTTable align="left" left tableData="{{tableData}}" configurator="{{testTableConfigWithCheck}}" border maxHeight="400" height="500" bind:changeChoice="changeChoice">
 		<block wx:for="{{tableData}}" wx:for-index="index" wx:for-item="tableItem" wx:key="index">
 			<block wx:for="{{testTableConfigWithCheck}}" wx:for-index="configIndex" wx:for-item="configItem" wx:key="configIndex">
 				<view wx:if="{{configItem.label == '选择'}}" class="mt-table-column-check" slot="tr-{{index}}td-{{configIndex+1}}">
@@ -21,6 +21,21 @@
 				</view>
 				<view wx:if="{{configItem.label != '选择' && configItem.label != '操作'}}" slot="tr-{{index}}td-{{configIndex+1}}" style="width: 100%;height: 100%;" class="mt-td-cell-view-center">
 					{{tableItem[testTableConfigWithCheck[configIndex]['prop']]}}
+				</view>
+			</block>
+		</block>
+	</MTTable>
+	<view class="mt-title">数组循环</view>
+	<MTTable align="left" left tableData="{{tableData}}" configurator="{{arrayTableConfigWithCheck}}" border maxHeight="400" height="500" bind:changeChoice="changeChoice">
+		<block wx:for="{{tableData}}" wx:for-index="index" wx:for-item="tableItem" wx:key="index">
+			<block wx:for="{{arrayTableConfigWithCheck}}" wx:for-index="configIndex" wx:for-item="configItem" wx:key="configIndex">
+				<view wx:if="{{configItem.label == '数组循环'}}" style="width: 100%;height: 100%;" slot="tr-{{index}}td-{{configIndex+1}}">
+					<view wx:for="{{tableItem[configItem.prop]}}" wx:for-index="arrayIndex" wx:key="arrayIndex" wx:for-item="arrayItem" class="loop-view">
+						{{arrayItem.name}}
+					</view>
+				</view>
+				<view wx:if="{{configItem.label != '数组循环' }}" slot="tr-{{index}}td-{{configIndex+1}}" style="width: 100%;height: 100%;" class="mt-td-cell-view-center">
+					{{tableItem[arrayTableConfigWithCheck[configIndex]['prop']]}}
 				</view>
 			</block>
 		</block>

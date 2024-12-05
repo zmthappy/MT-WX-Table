@@ -48,3 +48,12 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
 	font-size: 24rpx;
 	font-weight: bold;
 }
+
+.loop-view {
+	padding: 6rpx 10rpx;
+	border-bottom: 2rpx solid #dfdfdf;
+}
+
+.loop-view:last-child {
+	border-bottom: none;
+}

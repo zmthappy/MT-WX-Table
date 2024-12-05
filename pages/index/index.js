@@ -1,8 +1,7 @@
 // index.js
-
 Page({
   data: {
-		// 测试用
+		// 测试--基础
 		testTableConfig:[
 			{
 				prop:"Name",
@@ -24,40 +23,26 @@ Page({
 			},
 			{
 				prop:"adress",
-				width:"150rpx",
+				width:"",
 				label:"住址",
 				needPadding:true,
 			},
-			// {
-			// 	prop:"phonenumber",
-			// 	width:"150rpx",
-			// 	label:"电话",
-			// 	needPadding:true,
-			// },
-			// {
-			// 	prop:"Message",
-			// 	width:"150rpx",
-			// 	label:"five",
-			// 	needPadding:true,
-			// },
 		],
-		// 测试用
+		// 测试--选择框
 		testTableConfigWithCheck:[
 			{
 				prop:"checked",
 				width:"80rpx",
+				fiexed:true,
+				fiexedPosition:"left",
 				label:"选择",
-				needPadding:true,
-			},
-      {
-				prop:"Name",
-				width:"150rpx",
-				label:"姓名",
 				needPadding:true,
 			},
 			{
 				prop:"sex",
 				width:"150rpx",
+				fiexed:true,
+				fiexedPosition:"left",
 				label:"性别",
 				needPadding:true,
 			},
@@ -65,6 +50,14 @@ Page({
 				prop:"schoolNumber",
 				width:"150rpx",
 				label:"学号",
+				needPadding:true,
+			},
+			{
+				prop:"Name",
+				width:"",
+				fiexed:true,
+				fiexedPosition:"left",
+				label:"姓名",
 				needPadding:true,
 			},
 			{
@@ -85,6 +78,39 @@ Page({
 				label:"操作",
 				needPadding:true,
 			},
+		],
+		// 测试--数组内嵌套数组
+		arrayTableConfigWithCheck:[
+			{
+				prop:"sex",
+				width:"150rpx",
+				label:"性别",
+				needPadding:true,
+			},
+			{
+				prop:"schoolNumber",
+				width:"150rpx",
+				label:"学号",
+				needPadding:true,
+			},
+			{
+				prop:"Name",
+				width:"150rpx",
+				label:"姓名",
+				needPadding:true,
+			},
+			{
+				prop:"adress",
+				width:"150rpx",
+				label:"住址",
+				needPadding:true,
+			},
+			{
+				prop:"testArray",
+				width:"150rpx",
+				label:"数组循环",
+				needPadding:false,
+      }
 		],
 		tableData:[
 			{
@@ -212,11 +238,11 @@ Page({
         phonenumber:"132XXXXX4578",
 				testArray:[
 					{
-					name:"11",
+					name:"1111",
 					label:"cc",
 					},
 					{
-						name:"11",
+						name:"1122",
 						label:"cc",
 					},
 				]
