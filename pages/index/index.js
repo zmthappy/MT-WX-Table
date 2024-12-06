@@ -110,7 +110,13 @@ Page({
 				width:"150rpx",
 				label:"数组循环",
 				needPadding:false,
-      }
+			},
+			{
+				prop:"testArray3",
+				width:"150rpx",
+				label:"数组循环2",
+				needPadding:false,
+      },
 		],
 		tableData:[
 			{
@@ -122,6 +128,16 @@ Page({
         adress:"浙江省XXX市",
         phonenumber:"132XXXXX4578",
 				testArray:[
+					{
+					name:"11",
+					label:"cc",
+					},
+					{
+						name:"11",
+						label:"cc",
+					},
+				],
+				testArray3:[
 					{
 					name:"11",
 					label:"cc",
@@ -149,6 +165,16 @@ Page({
 						name:"11",
 						label:"cc",
 					},
+				],
+				testArray3:[
+					{
+					name:"11",
+					label:"cc",
+					},
+					{
+						name:"11",
+						label:"cc",
+					},
 				]
       },
       {
@@ -160,6 +186,16 @@ Page({
         adress:"浙江省XXX市",
         phonenumber:"132XXXXX4578",
 				testArray:[
+					{
+					name:"11",
+					label:"cc",
+					},
+					{
+						name:"11",
+						label:"cc",
+					},
+				],
+				testArray3:[
 					{
 					name:"11",
 					label:"cc",
@@ -187,6 +223,16 @@ Page({
 						name:"11",
 						label:"cc",
 					},
+				],
+				testArray3:[
+					{
+					name:"11",
+					label:"cc",
+					},
+					{
+						name:"11",
+						label:"cc",
+					},
 				]
       },
       {
@@ -206,7 +252,17 @@ Page({
 						name:"11",
 						label:"cc",
 					},
-				]
+				],
+				testArray3:[
+					{
+					name:"11",
+					label:"cc",
+					},
+					{
+						name:"11",
+						label:"cc",
+					},
+				],
       },
       {
 				Name:"小张",
@@ -225,9 +281,18 @@ Page({
 						name:"11",
 						label:"cc",
 					},
+				],
+				testArray3:[
+					{
+					name:"11",
+					label:"cc",
+					},
+					{
+						name:"11",
+						label:"cc",
+					},
 				]
       },
-      
       {
 				Name:"小张",
         sex:"男",
@@ -238,11 +303,21 @@ Page({
         phonenumber:"132XXXXX4578",
 				testArray:[
 					{
-					name:"1111",
+					name:"11",
 					label:"cc",
 					},
 					{
-						name:"1122",
+						name:"11",
+						label:"cc",
+					},
+				],
+				testArray3:[
+					{
+					name:"11",
+					label:"cc",
+					},
+					{
+						name:"11",
 						label:"cc",
 					},
 				]
@@ -264,6 +339,16 @@ Page({
 						name:"11",
 						label:"cc",
 					},
+				],
+				testArray3:[
+					{
+					name:"111111111111111111111111111111",
+					label:"cc11111",
+					},
+					{
+						name:"1111111111111111111111111111111111111111111",
+						label:"cc",
+					},
 				]
       },
       {
@@ -275,6 +360,24 @@ Page({
         adress:"浙江省XXX市",
         phonenumber:"132XXXXX4578",
 				testArray:[
+					{
+					name:"11",
+					label:"cc",
+					},
+					{
+						name:"11",
+						label:"cc",
+					},
+					{
+						name:"11",
+						label:"cc",
+					},
+					{
+						name:"11",
+						label:"cc",
+					},
+				],
+				testArray3:[
 					{
 					name:"11",
 					label:"cc",

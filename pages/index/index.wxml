@@ -34,7 +34,12 @@
 						{{arrayItem.name}}
 					</view>
 				</view>
-				<view wx:if="{{configItem.label != '数组循环' }}" slot="tr-{{index}}td-{{configIndex+1}}" style="width: 100%;height: 100%;" class="mt-td-cell-view-center">
+				<view wx:if="{{configItem.label == '数组循环2'}}" style="width: 100%;height: 100%;" slot="tr-{{index}}td-{{configIndex+1}}">
+					<view wx:for="{{tableItem[configItem.prop]}}" wx:for-index="arrayIndex" wx:key="arrayIndex" wx:for-item="arrayItem" class="loop-view">
+						{{arrayItem.name}}
+					</view>
+				</view>
+				<view wx:if="{{configItem.label != '数组循环' && configItem.label != '数组循环2' }}" slot="tr-{{index}}td-{{configIndex+1}}" style="width: 100%;height: 100%;" class="mt-td-cell-view-center">
 					{{tableItem[arrayTableConfigWithCheck[configIndex]['prop']]}}
 				</view>
 			</block>
