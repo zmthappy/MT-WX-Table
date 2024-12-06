@@ -155,6 +155,19 @@
 	/* 使用省略号表示文字被裁剪 */
 }
 
+/* 设置子单元格的内部项目的水平位置--- */
+.mt-table-td-view-left view {
+	text-align: left;
+}
+
+.mt-table-td-view-center view {
+	text-align: center;
+}
+
+.mt-table-td-view-right view {
+	text-align: right;
+}
+
 /* 包裹元素单元格padding */
 .mt-table-td-cell-padding {
 	padding: 6rpx 10rpx;

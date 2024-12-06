@@ -1,7 +1,7 @@
 # MT-WX-Table
 本组件是对[mini-easy-table](https://github.com/aizhaiyu/mini-easy-table)进行部分改良<br/>
 ## 参数说明：
-	1.align:表头单元格对齐方式：left;right;center;默认left(String)
+	1.align:表头单元格对齐方式：left;right;center;默认left(String)备注：目前只对单元格内的文字起作用，如果是元素请自行添加类名实现
 	2.maxHeight:设置表格最大高度；默认auto(String) 单位为px(rpx单位的换算转化会导致获取表格高度存在问题)
 	3.left:开启固定列；默认false(Boolean) --需要和configurator内的fiexed同步启用
 	4.border：是否开启边框；默认false(Boolean) 
