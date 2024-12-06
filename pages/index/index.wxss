@@ -18,8 +18,9 @@
 	width: 100%;
 	height: 100%;
 	display: flex;
-	justify-content: flex-start;
+	justify-content: center;
 	align-items: center;
+	margin-left: 6rpx;
 }
 
 /* 修改原生微信选择框样式 */
