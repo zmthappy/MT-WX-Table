@@ -26,9 +26,9 @@
 		</block>
 	</MTTable>
 	<view class="mt-title">数组循环</view>
-	<MTTable align="right" left tableData="{{tableData}}" configurator="{{arrayTableConfigWithCheck}}" border maxHeight="400" height="500" bind:changeChoice="changeChoice">
+	<MTTable align="left" left tableData="{{tableData}}"   configurator="{{arrayTableConfigWithCheck}}" border maxHeight="400" height="500" bind:changeChoice="changeChoice">
 		<block wx:for="{{tableData}}" wx:for-index="index" wx:for-item="tableItem" wx:key="index">
-			<block wx:for="{{arrayTableConfigWithCheck}}" wx:for-index="configIndex" wx:for-item="configItem" wx:key="configIndex">
+			<block wx:for="{{arrayTableConfigWithCheck}}" wx:for-index="configIndex" wx:for-item="configItem" wx:key="configIndex" wx:if="{{!configItem['tbodyLoop']}}">
 				<view wx:if="{{configItem.label == '数组循环'}}" style="width: 100%;height: 100%;" slot="tr-{{index}}td-{{configIndex+1}}">
 					<view wx:for="{{tableItem[configItem.prop]}}" wx:for-index="arrayIndex" wx:key="arrayIndex" wx:for-item="arrayItem" class="loop-view">
 						{{arrayItem.name}}

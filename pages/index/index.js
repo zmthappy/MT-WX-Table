@@ -109,13 +109,25 @@ Page({
 				prop:"testArray",
 				width:"150rpx",
 				label:"数组循环",
-				needPadding:false,
+        needPadding:false,
+        loopwidth:"300rpx",
+        loopArray:[
+          {
+            width:"150rpx",
+            prop:"testArray",
+          },
+          {
+            width:"150rpx",
+            prop:"testArray3",
+          },
+      ],
 			},
 			{
 				prop:"testArray3",
 				width:"150rpx",
 				label:"数组循环2",
-				needPadding:false,
+        needPadding:false,
+        tbodyLoop:true,
       },
 		],
 		tableData:[
